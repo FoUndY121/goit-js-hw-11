@@ -1,25 +1,4 @@
-// const renderFunction = () => {
-//   const form = document.querySelector(".form");
-//   const searchText = document.querySelector('input[name="search-text"]');
-//   const btn = form.querySelector("button");
-//
-//   btn.disabled = true;
-//
-//   searchText.addEventListener("input", () => {
-//     btn.disabled = searchText.value.trim() === "";
-//   });
-//
-//   form.addEventListener("submit", function (event) {
-//     event.preventDefault();
-//
-//     const value = searchText.value.trim();
-//     if (!value) return;
-//
-//     console.log("Search input:", value);
-//   });
-// };
-//
-// export default renderFunction;
+
 export function renderGallery(images) {
   const gallery = document.querySelector(".gallery");
   const markup = images

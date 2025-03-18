@@ -1,7 +1,4 @@
-// import renderFunctions from './js/render-functions.js';
-// import apiPixabay from './js/pixabay-api.js';
-//
-// apiPixabay(renderFunctions);
+
 import { getPictures } from "./js/pixabay-api.js";
 import { renderGallery, showLoader, hideLoader } from "./js/render-functions.js";
 import iziToast from "izitoast";

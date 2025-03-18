@@ -1,6 +1,10 @@
-
 export function renderGallery(images) {
   const gallery = document.querySelector(".gallery");
+  if (!gallery) {
+    console.error("Элемент .gallery не найден в DOM");
+    return;
+  }
+
   const markup = images
     .map(
       ({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => `
@@ -23,9 +27,19 @@ export function renderGallery(images) {
 }
 
 export function showLoader() {
-  document.querySelector(".loader").style.display = "block";
+  const loader = document.querySelector(".loader");
+  if (loader) {
+    loader.style.display = "block";
+  } else {
+    console.error("Элемент .loader не найден в DOM");
+  }
 }
 
 export function hideLoader() {
-  document.querySelector(".loader").style.display = "none";
+  const loader = document.querySelector(".loader");
+  if (loader) {
+    loader.style.display = "none";
+  } else {
+    console.error("Элемент .loader не найден в DOM");
+  }
 }

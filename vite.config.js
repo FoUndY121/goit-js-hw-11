@@ -10,6 +10,14 @@ export default defineConfig(({ command }) => {
       [command === 'serve' ? 'global' : '_global']: {},
     },
     root: 'src',
+    server: {
+      port: 5174, // Явно указываем порт
+      hmr: {
+        protocol: 'ws',
+        host: 'localhost',
+        port: 5174, // Задаем WebSocket для HMR
+      },
+    },
     build: {
       sourcemap: true,
       rollupOptions: {

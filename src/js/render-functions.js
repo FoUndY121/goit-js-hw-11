@@ -1,9 +1,16 @@
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
+let lightbox = null;
+
 export function renderGallery(images) {
   const gallery = document.querySelector(".gallery");
   if (!gallery) {
     console.error("Элемент .gallery не найден в DOM");
     return;
   }
+
+  gallery.innerHTML = "";
 
   const markup = images
     .map(
@@ -24,6 +31,12 @@ export function renderGallery(images) {
     .join("");
 
   gallery.innerHTML = markup;
+
+  if (lightbox) {
+    lightbox.refresh();
+  } else {
+    lightbox = new SimpleLightbox(".gallery a", { captionsData: "alt", captionDelay: 250 });
+  }
 }
 
 export function showLoader() {
